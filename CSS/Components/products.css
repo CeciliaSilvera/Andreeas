@@ -1,0 +1,15 @@
+﻿#wrap {
+    width: inherit;
+    word-wrap: break-word;
+}
+
+#logo {
+     width: auto; 
+     height: 50px; 
+     margin-top: -.85em; 
+     border-radius: 5px;
+}
+
+#money {
+    color: darkred;
+}

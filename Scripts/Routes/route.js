@@ -16,5 +16,23 @@ angular.module("mainModule")
                     caseInsensitiveMatch: true,
                     activeTab: "Home"
                 })
+                .when("/Products", {
+                    templateUrl: "Views/Products.html",
+                    controller: "ProductsController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "Products"
+                })
+                .when("/Product/:id", {
+                    templateUrl: "Views/Product.html",
+                    controller: "ProductController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "Products"
+                })
+                .when("/Cart", {
+                    templateUrl: "Views/Cart.html",
+                    controller: "CartController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "Cart"
+                })
         }
     ])

@@ -1,0 +1,15 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h3 ng-bind="title"></h3>
+        </div>
+        <div id="wrap" class="col-md-12">
+            <h3 ng-bind="product.name"></h3>
+            <p ng-bind="product.description"></p>
+            <button type="button"
+                    class="btn btn-success"
+                    ng-click="addToCart(product)">
+                Add to cart
+            </button>
+    </div>
+</div>

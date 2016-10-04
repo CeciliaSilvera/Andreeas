@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html ng-app="mainModule">
 <head>
-    <title></title>
+    <title>Webshop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="utf-8" />
     <link href="CSS/master.css" rel="stylesheet" />
@@ -10,7 +10,7 @@
 <body ng-controller="MainController">
     <header ng-include="'Views/Partials/Navbar.html'"></header>
 
-    <main class="container-fluid" ng-view></main>
+    <main class="container-fluid no-whitespace" ng-view></main>
 
     <!-- 3rd party libs and frameworks -->
     <script src="Scripts/jquery-1.9.1.min.js"></script>
@@ -27,5 +27,8 @@
     <!-- Controllers -->
     <script src="Scripts/Controllers/main.controller.js"></script>
     <script src="Scripts/Controllers/home.controller.js"></script>
+    <script src="Scripts/Controllers/products.controller.js"></script>
+    <script src="Scripts/Controllers/product.controller.js"></script>
+    <script src="Scripts/Controllers/cart.controller.js"></script>
 </body>
 </html>

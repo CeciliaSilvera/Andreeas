@@ -2,5 +2,8 @@
 
 angular.module("mainModule")
     .controller("HomeController", [
-
+        "$scope",
+        function ($scope) {
+            $scope.title = "Boots for men";
+        }
     ])

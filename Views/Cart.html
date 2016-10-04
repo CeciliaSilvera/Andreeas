@@ -1,0 +1,38 @@
+﻿<div class="col-md-12">
+    <h3 ng-bind="title"></h3>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Product</th>
+        <th>Thumbnail</th>
+        <th>Amount</th>
+        <th>Description</th>
+    </tr>
+    <tr ng-repeat="cartItem in cart track by $index">
+        <td class="col-md-1" ng-click="go('/Product/' + product.product.id)">
+            {{cartItem.product.name}}
+        </td>
+        <td class="col-md-1">
+            <img ng-src="{{cartItem.product.thumbnailUrl}}" />
+        </td>
+        <td>
+            <button type="button" class="btn btn-default" ng-click="changeAmount($index, 1)">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <button type="button" class="btn btn-default" ng-click="changeAmount($index, -1)">
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+            {{cartItem.amount}}
+
+        </td>
+        <td>
+            {{cartItem.product.description}}
+        </td>
+        <td>
+            <button type="button" class="btn btn-danger" ng-click="removeFromCart($index)">
+                <span class="glyphicon glyphicon-remove"></span> Remove
+            </button>
+        </td>
+    </tr>
+</table>
