@@ -9,27 +9,27 @@
         <th>Amount</th>
         <th>Description</th>
     </tr>
-    <tr ng-repeat="cartProduct in cartProducts track by $index">
-        <td class="col-md-1" ng-click="go('/Product/' + cartProduct.id)">
-            {{cartProduct.name}}
+    <tr ng-repeat="product in cart track by $index">
+        <td class="col-md-1" ng-click="go('/Product/' + product.id)">
+            {{product.name}}
         </td>
         <td class="col-md-1">
-            <img ng-src="{{cartProduct.src}}" />
+            <img ng-src="{{product.src}}" />
         </td>
         <td>
-            <button type="button" class="btn btn-default" ng-click="changeAmount($index, 1)">
+            <button type="button" class="btn btn-default" ng-click="addAmount(product)">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
-            <button type="button" class="btn btn-default" ng-click="changeAmount($index, -1)">
+            <button type="button" class="btn btn-default" ng-click="reduceAmount($index, product)">
                 <span class="glyphicon glyphicon-minus"></span>
             </button>
-            {{cartProduct.amount}}
+            {{product.amount}}
         </td>
         <td>
-            {{cartProduct.description}}
+            {{product.description}}
         </td>
         <td>
-            <button type="button" class="btn btn-danger" ng-click="removeFromCart($index)">
+            <button type="button" class="btn btn-danger" ng-click="removeFromCart(product)">
                 <span class="glyphicon glyphicon-remove"></span> Remove
             </button>
         </td>

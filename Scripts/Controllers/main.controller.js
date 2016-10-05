@@ -1,4 +1,5 @@
-﻿/// <reference path="../angular.js" />
+﻿
+/// <reference path="../angular.js" />
 
 angular.module("mainModule")
     .controller("MainController", [
@@ -7,6 +8,7 @@ angular.module("mainModule")
         "$location",
         function ($scope, $route, $location) {
             $scope.$route = $route;
+            $scope.cart = [];
             $scope.data = {};
             $scope.db = {};
 
@@ -36,18 +38,9 @@ angular.module("mainModule")
             }
 
             //pt fiecare index i din arrayul $scope.data.cart, adica de la 0 pana la length-1, inaintind cate unul.
-            $scope.addToCart = function (productId) {
-                for (var i = 0; i < $scope.data.cart.length; i++) { 
-                    if (productId == $scope.data.cart[i]) {
-                        return false;
-                    }
-                }
-                $scope.data.cart.push({
-                    amount: 1,
-                    productId: productId
-                });
-                return true;
-            };
+            $scope.addToCart = function (product) {
+                $scope.cart.push(product);
+            }
 
             $scope.db.categories = [
                 { id: 1
