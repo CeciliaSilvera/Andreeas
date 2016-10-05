@@ -1,10 +1,12 @@
-﻿<div class="col-md-12">
-    <h3>Chelsea boots</h3>
+﻿<!--<div class="col-md-12">
+    <h3 ng-bind="title"></h3>
 </div>
-<div class="row">
+<div class="col-md-12">
+    <h3>Chelsea boots</h3>
+</div>-->
+<!--<div class="row">
     <div class="col-md-12">
         <br />
-        <!-- Product 1 -->
         <div class="col-md-4">
             <div class="thumbnail">
                 <a href="#" ng-click="go('/Product/' + product.id)">
@@ -25,7 +27,6 @@
                 </div>
             </div>
         </div>
-        <!-- Product 2 -->
         <div class="col-md-4">
             <div class="thumbnail">
                 <a href="#" ng-click="go('/Product/' + product.id)">
@@ -45,7 +46,6 @@
                 </div>
             </div>
         </div>
-        <!-- Product 3 -->
         <div class="col-md-4">
             <div class="thumbnail">
                 <a href="#" ng-click="go('/Product/' + product.id)">
@@ -65,5 +65,42 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>-->
+
+<div class="col-md-12">
+    <h1 ng-bind="title"></h1>
+</div>
+
+<div ng-repeat="category in db.categories track by $index">
+    <div class="col-md-12">
+        <h2 ng-bind="category.name"></h2>
+    </div>
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Product</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="product in db.products track by $index" 
+                ng-if="product.categoryId == category.id">
+                <td class="col-md-1" ng-click="go('/Product/' + product.id)">
+                    {{product.name}}
+                </td>
+                <td class="col-md-1">
+                    <img ng-src="{{product.src}}" />
+                </td>
+                <td>
+                    {{product.description}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" ng-click="addToCart(product.id)">
+                        <span class="glyphicon glyphicon-plus"></span> Add to cart
+                    </button>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>

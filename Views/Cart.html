@@ -5,16 +5,16 @@
 <table class="table">
     <tr>
         <th>Product</th>
-        <th>Thumbnail</th>
+        <th>Image</th>
         <th>Amount</th>
         <th>Description</th>
     </tr>
-    <tr ng-repeat="cartItem in cart track by $index">
-        <td class="col-md-1" ng-click="go('/Product/' + product.product.id)">
-            {{cartItem.product.name}}
+    <tr ng-repeat="cartProduct in cartProducts track by $index">
+        <td class="col-md-1" ng-click="go('/Product/' + cartProduct.id)">
+            {{cartProduct.name}}
         </td>
         <td class="col-md-1">
-            <img ng-src="{{cartItem.product.thumbnailUrl}}" />
+            <img ng-src="{{cartProduct.src}}" />
         </td>
         <td>
             <button type="button" class="btn btn-default" ng-click="changeAmount($index, 1)">
@@ -23,11 +23,10 @@
             <button type="button" class="btn btn-default" ng-click="changeAmount($index, -1)">
                 <span class="glyphicon glyphicon-minus"></span>
             </button>
-            {{cartItem.amount}}
-
+            {{cartProduct.amount}}
         </td>
         <td>
-            {{cartItem.product.description}}
+            {{cartProduct.description}}
         </td>
         <td>
             <button type="button" class="btn btn-danger" ng-click="removeFromCart($index)">
